@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CSS Hover Submenu</title>
+  <style>
+    /* Basic styles for the menu */
+    nav {
+      background-color: #333;
+      padding: 10px;
+    }
+
+    .menu {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .menu li {
+      position: relative; /* Necessary for submenu positioning */
+      margin-right: 20px;
+    }
+
+    .menu li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block;
+      font-size: 16px;
+    }
+
+    .menu li:hover a {
+      background-color: #444;
+    }
+
+    /* First-level submenu styles */
+    .submenu {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 100%; /* Position the submenu just below the parent menu */
+      left: 0;
+      background-color: #444;
+      display: none; /* Initially hide the submenu */
+      width: 200px;
+    }
+
+    .submenu li {
+      margin: 0;
+    }
+
+    .submenu li a {
+      padding: 10px;
+      white-space: nowrap; /* Prevent submenu items from wrapping */
+    }
+
+    .submenu li:hover a {
+      background-color: #555;
+    }
+
+    /* Show the first-level submenu on hover */
+    .has-submenu:hover .submenu {
+      display: block;
+    }
+
+    /* Second-level submenu positioning and styling */
+    .submenu-item-with-submenu:hover .second-submenu {
+      display: block;
+    }
+
+    .second-submenu {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 0; /* Align the second submenu to the parent */
+      left: 100%; /* Position it to the right of the first submenu */
+      background-color: #555;
+      display: none; /* Initially hide the second submenu */
+      width: 200px;
+    }
+
+    .second-submenu li {
+      margin: 0;
+    }
+
+    .second-submenu li a {
+      padding: 10px;
+      white-space: nowrap;
+      color: white;
+    }
+
+    .second-submenu li:hover a {
+      background-color: #666;
+    }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li class="has-submenu">
+        <a href="#">Services</a>
+        <ul class="submenu">
+          <li class="submenu-item-with-submenu">
+            <a href="#">Web Development</a>
+            <ul class="second-submenu">
+              <li><a href="#">HTML</a></li>
+              <li><a href="#">CSS</a></li>
+              <li><a href="#">JavaScript</a></li>
+            </ul>
+          </li>
+          <li class="submenu-item-with-submenu">
+            <a href="#">SEO</a>
+            <ul class="second-submenu">
+                <li><a href="#">On-Page SEO</a></li>
+                <li><a href="#">Off-Page SEO</a></li>
+                <li><a href="#">Technical SEO</a></li>
+              </ul>
+          </li>
+          <li class="submenu-item-with-submenu">
+            <a href="#">Marketing</a>
+            <ul class="second-submenu">
+                <li><a href="#">Social Media Marketing</a></li>
+                <li><a href="#">Email Marketing</a></li>
+                <li><a href="#">Content Marketing</a></li>
+              </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</body>
+</html>
